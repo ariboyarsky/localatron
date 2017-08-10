@@ -23,8 +23,12 @@ class NBCLocalScrape:
 
         soup = bs(r.text, "html5lib")
         article = soup.find("div", attrs={"class":"articleText"})
+        text = ""
         if article is not None:
-            return str(article.get_text())
+            texts = article.find_all("p", attrs={"class":"paragraph"})
+            for t in texts:
+                text += str(t.text) + " "
+            return text
         else:
             return ""
 

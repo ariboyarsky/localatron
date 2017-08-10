@@ -29,9 +29,10 @@ for article in local_articles:
     # print(article)
     local_data += scrapper.get_article_text("http:" + str(article)) + " "
 
-f = open("data/local.txt", "w")
-f.write(local_data)
-f.close()
+local_data += scrapper.get_article_text("http://www.nbcwashington.com/investigations/Teen-Girl-Sexually-Assaulted-on-Flight-to-Dulles-FBI-439539213.html") + " "
+with open("data/local.txt", encoding='utf-8', mode = "w+") as f:
+    f.write(local_data)
+
 
 
 # national data
