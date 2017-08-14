@@ -33,3 +33,15 @@ class NBCLocalScrape:
             return ""
 
 
+class CNNScrape:
+
+    def get_article_text(self, url):
+        r = requests.get(url)
+
+        soup = bs(r.text, "html5lib")
+        article = soup.find_all(attrs={"class":"zn-body__paragraph"})
+        text = ""
+        for div in article:
+            text += str(div.text) + " "
+
+        return text

@@ -37,8 +37,7 @@ with open("data/local.txt", encoding='utf-8', mode = "w+") as f:
 
 # national data
 # collect 220 from each
-natl_urls = ["https://www.usnews.com/news/national-news", "http://www.foxnews.com/", "http://www.nbcnews.com/news/us-news",
-             "http://www.latimes.com/nation/", "http://www.cnn.com/"]
+natl_urls = ["http://feeds.nbcnews.com/feeds/topstories", "http://www.cnn.com/"]
 
 # collect first 100 links to an article store in dict based on above url
-# output each article to a txt file under training, national-00i.txt
+# output each article to a txt file under training, national-00i.txtnatl_urls = ["http://www.nbcnews.com/news/us-news",
